@@ -6,4 +6,6 @@
 
 # 1-npm install
 
+## Start the server
+
 # 2-ionic serve

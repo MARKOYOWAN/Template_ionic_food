@@ -31,6 +31,8 @@ export class HomePage implements OnInit {
     freeMode: true
   };
 
+  showLocationDetail= false;
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -49,6 +51,11 @@ export class HomePage implements OnInit {
     setTimeout(() => {
       event.target.complete();
     }, 2000);
+  }
+
+  onScroll(ev) {
+    const offset = ev.detail.scrollTop;
+    this.showLocationDetail = offset > 40;
   }
 
 }

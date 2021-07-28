@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content scrollEvents="true" [appHideHeader]="hideheader" (ionScroll)="onScroll($event)">
 
     <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
@@ -11,7 +11,7 @@
         <ion-col size="8">
             <ion-text color="dark">
                 <span>Now</span><br>
-                <b>London</b>
+                <b>Madagascar</b>
                 <ion-icon name="chevron-down-outline" color="primary"></ion-icon>
             </ion-text>
         </ion-col>
@@ -24,6 +24,8 @@
 
     <ion-row class="sticky-row">
         <ion-col size="10">
+            <ion-text class="ion-padding-start" color="medium" [ngClass]="{'location-visible': showLocationDetail, 'location-hidden': !showLocationDetail}">
+                Madagascar</ion-text>
             <ion-searchbar placeholder="Dishes, restaurants or cuisin"></ion-searchbar>
         </ion-col>
         <ion-col size="2">
